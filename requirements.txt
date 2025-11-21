@@ -1,0 +1,11 @@
+pandas
+numpy
+geopandas
+scikit-learn
+folium
+geopy
+
+mapclassify
+matplotlib
+shapely
+osmnx==1.9.1
