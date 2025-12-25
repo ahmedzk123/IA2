@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_780fb616956bdabd3631898ff72013e8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+ <div style="position: fixed; 
+             bottom: 50px; left: 50px; width: 150px; height: 110px; 
+             border:2px solid grey; z-index:9999; font-size:14px;
+             background-color:white; padding: 10px;">
+ <b>Shelter Type</b><br>
+ <i class="fa fa-circle" style="color:blue"></i> Men only<br>
+ <i class="fa fa-circle" style="color:red"></i> Women only<br>
+ <i class="fa fa-circle" style="color:purple"></i> Both
+ </div>
+    
+            <div class="folium-map" id="map_780fb616956bdabd3631898ff72013e8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_780fb616956bdabd3631898ff72013e8 = L.map(
+                "map_780fb616956bdabd3631898ff72013e8",
+                {
+                    center: [43.7, -79.4],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c6bb2306420cfe92030b39bc81507aff = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c6bb2306420cfe92030b39bc81507aff.addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+            var circle_marker_aead4ed24ed96221a7dd604dc36ec840 = L.circleMarker(
+                [43.6814254, -79.4183507],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_fbcdae2d36e147c8f227069a617cf7cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3ab1ca972b236df4c6485e84e2c76e20 = $(`<div id="html_3ab1ca972b236df4c6485e84e2c76e20" style="width: 100.0%; height: 100.0%;"><b>Na-Me-Res</b><br>Type: Men only<br>Address: 14 Vaughan Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_fbcdae2d36e147c8f227069a617cf7cd.setContent(html_3ab1ca972b236df4c6485e84e2c76e20);
+            
+        
+
+        circle_marker_aead4ed24ed96221a7dd604dc36ec840.bindPopup(popup_fbcdae2d36e147c8f227069a617cf7cd)
+        ;
+
+        
+    
+    
+            var circle_marker_02b914541ff4e6730ab58767d17ec9fc = L.circleMarker(
+                [43.6518512, -79.4036296],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_a916395e4446d7588a20e313ce62c62f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_936c6ec51b0a4984cff3d0541c64489f = $(`<div id="html_936c6ec51b0a4984cff3d0541c64489f" style="width: 100.0%; height: 100.0%;"><b>TSSS Womens' Residence</b><br>Type: Women only<br>Address: 674 Dundas St W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_a916395e4446d7588a20e313ce62c62f.setContent(html_936c6ec51b0a4984cff3d0541c64489f);
+            
+        
+
+        circle_marker_02b914541ff4e6730ab58767d17ec9fc.bindPopup(popup_a916395e4446d7588a20e313ce62c62f)
+        ;
+
+        
+    
+    
+            var circle_marker_59a3f0a13b8caa7653d9a5caad391d64 = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_e6f446f8e42fef273513ba1cab342bfb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fbc7492d70c7e781bb0e7a96c02d14fc = $(`<div id="html_fbc7492d70c7e781bb0e7a96c02d14fc" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_e6f446f8e42fef273513ba1cab342bfb.setContent(html_fbc7492d70c7e781bb0e7a96c02d14fc);
+            
+        
+
+        circle_marker_59a3f0a13b8caa7653d9a5caad391d64.bindPopup(popup_e6f446f8e42fef273513ba1cab342bfb)
+        ;
+
+        
+    
+    
+            var circle_marker_d2842d6a642e47f0eefda42c4844cd24 = L.circleMarker(
+                [43.742472, -79.4965543],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_584d361da76db1f1a622dc833df5a314 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_692fb73e0834b70b9e245c8c4f33bbd5 = $(`<div id="html_692fb73e0834b70b9e245c8c4f33bbd5" style="width: 100.0%; height: 100.0%;"><b>TSSS Downsview Dells</b><br>Type: Men only<br>Address: 1651 Sheppard Ave W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_584d361da76db1f1a622dc833df5a314.setContent(html_692fb73e0834b70b9e245c8c4f33bbd5);
+            
+        
+
+        circle_marker_d2842d6a642e47f0eefda42c4844cd24.bindPopup(popup_584d361da76db1f1a622dc833df5a314)
+        ;
+
+        
+    
+    
+            var circle_marker_11ebb194ad6f371bc1207c7b8b61fbc5 = L.circleMarker(
+                [43.641817, -79.401972],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_18dd366cb7291e99445c54fa1994404d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2543a3b954f23fff00972f08f8a3ed10 = $(`<div id="html_2543a3b954f23fff00972f08f8a3ed10" style="width: 100.0%; height: 100.0%;"><b>TSSS Fort York Residence</b><br>Type: Men only<br>Address: 38 Bathurst St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_18dd366cb7291e99445c54fa1994404d.setContent(html_2543a3b954f23fff00972f08f8a3ed10);
+            
+        
+
+        circle_marker_11ebb194ad6f371bc1207c7b8b61fbc5.bindPopup(popup_18dd366cb7291e99445c54fa1994404d)
+        ;
+
+        
+    
+    
+            var circle_marker_816f6a7fed3a6c4c3f7c2d20279bfb80 = L.circleMarker(
+                [43.6818715, -79.4186979],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_48b9a28f6b669ef465ef0415140592a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32718b2b1a8af806a8cf0c335b1d6e16 = $(`<div id="html_32718b2b1a8af806a8cf0c335b1d6e16" style="width: 100.0%; height: 100.0%;"><b>Sagatay </b><br>Type: Men only<br>Address: 26 Vaughan Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_48b9a28f6b669ef465ef0415140592a6.setContent(html_32718b2b1a8af806a8cf0c335b1d6e16);
+            
+        
+
+        circle_marker_816f6a7fed3a6c4c3f7c2d20279bfb80.bindPopup(popup_48b9a28f6b669ef465ef0415140592a6)
+        ;
+
+        
+    
+    
+            var circle_marker_38d7e7ad7a7a693b1a7bb242ef20b36b = L.circleMarker(
+                [43.65425, -79.398877],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_e05f85a613cf43b74f25d397ce15b2a0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_945cc16cba1f91f6350860810d883721 = $(`<div id="html_945cc16cba1f91f6350860810d883721" style="width: 100.0%; height: 100.0%;"><b>The Scott Mission - Kensington location</b><br>Type: Men only<br>Address: 346 Spadina Ave.<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_e05f85a613cf43b74f25d397ce15b2a0.setContent(html_945cc16cba1f91f6350860810d883721);
+            
+        
+
+        circle_marker_38d7e7ad7a7a693b1a7bb242ef20b36b.bindPopup(popup_e05f85a613cf43b74f25d397ce15b2a0)
+        ;
+
+        
+    
+    
+            var circle_marker_f9e25f7d7ade0a48438537e9c7759e75 = L.circleMarker(
+                [43.660052, -79.374465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_a212d551db51f220e55a495099346363 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_14ad7ae519138d4c1074da9695347824 = $(`<div id="html_14ad7ae519138d4c1074da9695347824" style="width: 100.0%; height: 100.0%;"><b>Dixon Hall Schoolhouse</b><br>Type: Men only<br>Address: 349 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_a212d551db51f220e55a495099346363.setContent(html_14ad7ae519138d4c1074da9695347824);
+            
+        
+
+        circle_marker_f9e25f7d7ade0a48438537e9c7759e75.bindPopup(popup_a212d551db51f220e55a495099346363)
+        ;
+
+        
+    
+    
+            var circle_marker_4b8334ed9d329e060401b5cfc1d7bb38 = L.circleMarker(
+                [43.6567429, -79.3623502],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_cf9e1a386be1b0026261fbb25706e69c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21fa363b3466cee3763e4f88d4c36cce = $(`<div id="html_21fa363b3466cee3763e4f88d4c36cce" style="width: 100.0%; height: 100.0%;"><b>Good Shepherd Centre Barrett House</b><br>Type: Men only<br>Address: 35 Sydenham St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_cf9e1a386be1b0026261fbb25706e69c.setContent(html_21fa363b3466cee3763e4f88d4c36cce);
+            
+        
+
+        circle_marker_4b8334ed9d329e060401b5cfc1d7bb38.bindPopup(popup_cf9e1a386be1b0026261fbb25706e69c)
+        ;
+
+        
+    
+    
+            var circle_marker_becaea59215e7095ce7db6100e01bb9f = L.circleMarker(
+                [43.656175, -79.3624789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_0f5959774b4984499b958db4bef3faa1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13334156fd082e55681b1bb51e94a6cf = $(`<div id="html_13334156fd082e55681b1bb51e94a6cf" style="width: 100.0%; height: 100.0%;"><b>Good Shepherd Centre</b><br>Type: Men only<br>Address: 412 Queen St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_0f5959774b4984499b958db4bef3faa1.setContent(html_13334156fd082e55681b1bb51e94a6cf);
+            
+        
+
+        circle_marker_becaea59215e7095ce7db6100e01bb9f.bindPopup(popup_0f5959774b4984499b958db4bef3faa1)
+        ;
+
+        
+    
+    
+            var circle_marker_d59ffe7854f1a76b3deacb511e4562aa = L.circleMarker(
+                [43.656175, -79.3624789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_2708aaf7de2d07ea99eabd31ba09010d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91ab444d7dac6ea667b6906368a40dcf = $(`<div id="html_91ab444d7dac6ea667b6906368a40dcf" style="width: 100.0%; height: 100.0%;"><b>Good Shepherd Centre</b><br>Type: Men only<br>Address: 412 Queen St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_2708aaf7de2d07ea99eabd31ba09010d.setContent(html_91ab444d7dac6ea667b6906368a40dcf);
+            
+        
+
+        circle_marker_d59ffe7854f1a76b3deacb511e4562aa.bindPopup(popup_2708aaf7de2d07ea99eabd31ba09010d)
+        ;
+
+        
+    
+    
+            var circle_marker_faab1a06b6ce947c0a418c62cd4a40af = L.circleMarker(
+                [43.6919186, -79.4398677],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_b69b99078573acecbe7aaffda4fd8743 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0fa12a443c98520724dfb36e49551765 = $(`<div id="html_0fa12a443c98520724dfb36e49551765" style="width: 100.0%; height: 100.0%;"><b>Cornerstone Place</b><br>Type: Men only<br>Address: 616 Vaughan Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_b69b99078573acecbe7aaffda4fd8743.setContent(html_0fa12a443c98520724dfb36e49551765);
+            
+        
+
+        circle_marker_faab1a06b6ce947c0a418c62cd4a40af.bindPopup(popup_b69b99078573acecbe7aaffda4fd8743)
+        ;
+
+        
+    
+    
+            var circle_marker_93b10bb2c905bdfac1ba8b05662b6534 = L.circleMarker(
+                [43.6660985, -79.446011],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_3558de9ed8d66374f4a340d7128f4fa1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e4116a3ceeb3d042a6d679be8a5fc80 = $(`<div id="html_4e4116a3ceeb3d042a6d679be8a5fc80" style="width: 100.0%; height: 100.0%;"><b>CONC Men's Shelter Lansdowne Ave</b><br>Type: Men only<br>Address: 973 Lansdowne Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_3558de9ed8d66374f4a340d7128f4fa1.setContent(html_4e4116a3ceeb3d042a6d679be8a5fc80);
+            
+        
+
+        circle_marker_93b10bb2c905bdfac1ba8b05662b6534.bindPopup(popup_3558de9ed8d66374f4a340d7128f4fa1)
+        ;
+
+        
+    
+    
+            var circle_marker_e7cff5af1f533a07a03bfebec12f988d = L.circleMarker(
+                [43.665538, -79.4631271],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_08f51e96361440827b1ba97204427fb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ad5248592e0624d2bcec2722d688bcf = $(`<div id="html_7ad5248592e0624d2bcec2722d688bcf" style="width: 100.0%; height: 100.0%;"><b>SA Evangeline Residence</b><br>Type: Women only<br>Address: 2808 Dundas St W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_08f51e96361440827b1ba97204427fb4.setContent(html_7ad5248592e0624d2bcec2722d688bcf);
+            
+        
+
+        circle_marker_e7cff5af1f533a07a03bfebec12f988d.bindPopup(popup_08f51e96361440827b1ba97204427fb4)
+        ;
+
+        
+    
+    
+            var circle_marker_70c938870d3f7b0bc3d8744b5a6d3eb6 = L.circleMarker(
+                [43.6522087, -79.372521],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_d52518160a3afa7a0d6cb596a311c279 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b935b91b50268c153e4cafd5d349bc9c = $(`<div id="html_b935b91b50268c153e4cafd5d349bc9c" style="width: 100.0%; height: 100.0%;"><b>SA Gateway</b><br>Type: Men only<br>Address: 107 Jarvis St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_d52518160a3afa7a0d6cb596a311c279.setContent(html_b935b91b50268c153e4cafd5d349bc9c);
+            
+        
+
+        circle_marker_70c938870d3f7b0bc3d8744b5a6d3eb6.bindPopup(popup_d52518160a3afa7a0d6cb596a311c279)
+        ;
+
+        
+    
+    
+            var circle_marker_1b2e9338bb542e600bf5568f128f3637 = L.circleMarker(
+                [43.7982514, -79.3954227],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_39b1f209b14ae6908ce6037866cffb20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b58bee8a7a9f28b2ea0a01d4cca9a09a = $(`<div id="html_b58bee8a7a9f28b2ea0a01d4cca9a09a" style="width: 100.0%; height: 100.0%;"><b>SVDP St. Clare's Residence</b><br>Type: Women only<br>Address: 3410 Bayview Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_39b1f209b14ae6908ce6037866cffb20.setContent(html_b58bee8a7a9f28b2ea0a01d4cca9a09a);
+            
+        
+
+        circle_marker_1b2e9338bb542e600bf5568f128f3637.bindPopup(popup_39b1f209b14ae6908ce6037866cffb20)
+        ;
+
+        
+    
+    
+            var circle_marker_21be667ba8139067ea45b45db1264fe8 = L.circleMarker(
+                [43.659289, -79.3727253],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_16824d157ed0714aa262ec326edc48dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5afbbbeeb87acaf0473cb285c9f38954 = $(`<div id="html_5afbbbeeb87acaf0473cb285c9f38954" style="width: 100.0%; height: 100.0%;"><b>Street Haven</b><br>Type: Women only<br>Address: 87 Pembroke St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_16824d157ed0714aa262ec326edc48dd.setContent(html_5afbbbeeb87acaf0473cb285c9f38954);
+            
+        
+
+        circle_marker_21be667ba8139067ea45b45db1264fe8.bindPopup(popup_16824d157ed0714aa262ec326edc48dd)
+        ;
+
+        
+    
+    
+            var circle_marker_151dfb5ad019cd72e0b2919ed216111c = L.circleMarker(
+                [43.6600957, -79.3783524],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_82a99d6333010361abdd99ec7902beb3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_28432ad0535955e3540e20987311a478 = $(`<div id="html_28432ad0535955e3540e20987311a478" style="width: 100.0%; height: 100.0%;"><b>SVDP Mary's Home</b><br>Type: Women only<br>Address: 70 Gerrard St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_82a99d6333010361abdd99ec7902beb3.setContent(html_28432ad0535955e3540e20987311a478);
+            
+        
+
+        circle_marker_151dfb5ad019cd72e0b2919ed216111c.bindPopup(popup_82a99d6333010361abdd99ec7902beb3)
+        ;
+
+        
+    
+    
+            var circle_marker_3bb5c7d8813cc971d1418527a2e388e3 = L.circleMarker(
+                [43.6179513, -79.4973594],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_b431262118b5147802e9292d06ca5580 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce8b3d83d4c651e7bb22af8096e7562a = $(`<div id="html_ce8b3d83d4c651e7bb22af8096e7562a" style="width: 100.0%; height: 100.0%;"><b>SVDP Elisa House</b><br>Type: Women only<br>Address: 60 Newcastle St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_b431262118b5147802e9292d06ca5580.setContent(html_ce8b3d83d4c651e7bb22af8096e7562a);
+            
+        
+
+        circle_marker_3bb5c7d8813cc971d1418527a2e388e3.bindPopup(popup_b431262118b5147802e9292d06ca5580)
+        ;
+
+        
+    
+    
+            var circle_marker_5660d3e0582748f0663425682c43ff5e = L.circleMarker(
+                [43.6627837, -79.338277],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_7e79fff60be195afb9a1e920045d9cd1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21efd5a2e948a1ec97265f84ac8b3ee2 = $(`<div id="html_21efd5a2e948a1ec97265f84ac8b3ee2" style="width: 100.0%; height: 100.0%;"><b>SVDP Amelie House</b><br>Type: Women only<br>Address: 126 Pape Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_7e79fff60be195afb9a1e920045d9cd1.setContent(html_21efd5a2e948a1ec97265f84ac8b3ee2);
+            
+        
+
+        circle_marker_5660d3e0582748f0663425682c43ff5e.bindPopup(popup_7e79fff60be195afb9a1e920045d9cd1)
+        ;
+
+        
+    
+    
+            var circle_marker_8d23b2f4345d2ec4170b0a30cc2bd316 = L.circleMarker(
+                [43.6527199, -79.4308147],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_23c0d672e15c20c04e1c332d5a480150 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47a86731155bf2ecb041813a195d3f83 = $(`<div id="html_47a86731155bf2ecb041813a195d3f83" style="width: 100.0%; height: 100.0%;"><b>Fred Victor Centre Fatima House</b><br>Type: Women only<br>Address: 1059 College Street<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_23c0d672e15c20c04e1c332d5a480150.setContent(html_47a86731155bf2ecb041813a195d3f83);
+            
+        
+
+        circle_marker_8d23b2f4345d2ec4170b0a30cc2bd316.bindPopup(popup_23c0d672e15c20c04e1c332d5a480150)
+        ;
+
+        
+    
+    
+            var circle_marker_0ec26387f87881172fd9aeb21f28525b = L.circleMarker(
+                [43.6551774, -79.3694767],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_f90b90dc2e52237e6d4492a1afa87480 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_033f608b23d4ff2d0d770001e6425493 = $(`<div id="html_033f608b23d4ff2d0d770001e6425493" style="width: 100.0%; height: 100.0%;"><b>Maxwell Meighen Centre</b><br>Type: Men only<br>Address: 135 Sherbourne St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_f90b90dc2e52237e6d4492a1afa87480.setContent(html_033f608b23d4ff2d0d770001e6425493);
+            
+        
+
+        circle_marker_0ec26387f87881172fd9aeb21f28525b.bindPopup(popup_f90b90dc2e52237e6d4492a1afa87480)
+        ;
+
+        
+    
+    
+            var circle_marker_87f131badefaac288432a127aaec5c02 = L.circleMarker(
+                [43.684742, -79.3896662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_26f17d64fd00a24fef6a376ddc0d6bf7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3ba3f4fd65c98fd463c602793e118d1 = $(`<div id="html_c3ba3f4fd65c98fd463c602793e118d1" style="width: 100.0%; height: 100.0%;"><b>YWCA 1st Stop Woodlawn </b><br>Type: Women only<br>Address: 80 Woodlawn Ave E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_26f17d64fd00a24fef6a376ddc0d6bf7.setContent(html_c3ba3f4fd65c98fd463c602793e118d1);
+            
+        
+
+        circle_marker_87f131badefaac288432a127aaec5c02.bindPopup(popup_26f17d64fd00a24fef6a376ddc0d6bf7)
+        ;
+
+        
+    
+    
+            var circle_marker_b8035de3e1c8ca2cc1d13ddd4ac05258 = L.circleMarker(
+                [43.641817, -79.401972],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_004283a74f7dc439e7668a88885122b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68cc381e86a8bc5567f75235090763e1 = $(`<div id="html_68cc381e86a8bc5567f75235090763e1" style="width: 100.0%; height: 100.0%;"><b>TSSS Fort York Residence</b><br>Type: Men only<br>Address: 38 Bathurst St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_004283a74f7dc439e7668a88885122b8.setContent(html_68cc381e86a8bc5567f75235090763e1);
+            
+        
+
+        circle_marker_b8035de3e1c8ca2cc1d13ddd4ac05258.bindPopup(popup_004283a74f7dc439e7668a88885122b8)
+        ;
+
+        
+    
+    
+            var circle_marker_95b70edcdf9dea3c95106bdc871ed09e = L.circleMarker(
+                [43.6676332, -79.3792531],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_2d3e1309fc1879fb61c8207f4c28e198 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3884cf7518248e3c4efd6431e6d53914 = $(`<div id="html_3884cf7518248e3c4efd6431e6d53914" style="width: 100.0%; height: 100.0%;"><b>Fred Victor Mary Sheffield House</b><br>Type: Women only<br>Address: 512 Jarvis St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_2d3e1309fc1879fb61c8207f4c28e198.setContent(html_3884cf7518248e3c4efd6431e6d53914);
+            
+        
+
+        circle_marker_95b70edcdf9dea3c95106bdc871ed09e.bindPopup(popup_2d3e1309fc1879fb61c8207f4c28e198)
+        ;
+
+        
+    
+    
+            var circle_marker_91c5ec314426730604e591efb88399c0 = L.circleMarker(
+                [43.6591046, -79.3681658],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_e90d59f6b7bd325eb84437fe834c131d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f249e08119870174f964c9026d30ceca = $(`<div id="html_f249e08119870174f964c9026d30ceca" style="width: 100.0%; height: 100.0%;"><b>Fred Victor Centre Transition to Housing Dundas St E</b><br>Type: Women only<br>Address: 386 Dundas St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_e90d59f6b7bd325eb84437fe834c131d.setContent(html_f249e08119870174f964c9026d30ceca);
+            
+        
+
+        circle_marker_91c5ec314426730604e591efb88399c0.bindPopup(popup_e90d59f6b7bd325eb84437fe834c131d)
+        ;
+
+        
+    
+    
+            var circle_marker_ad610e2f2e30623dbd51206c01de48c2 = L.circleMarker(
+                [43.7278398, -79.2662915],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_ab07f2bb8f5f68ec49b95c5900cb6f39 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b4af5fafddffcc931bf7dc229e330bc = $(`<div id="html_1b4af5fafddffcc931bf7dc229e330bc" style="width: 100.0%; height: 100.0%;"><b>HFS Kennedy Rd Women's Shelter</b><br>Type: Women only<br>Address: 702 Kennedy Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_ab07f2bb8f5f68ec49b95c5900cb6f39.setContent(html_1b4af5fafddffcc931bf7dc229e330bc);
+            
+        
+
+        circle_marker_ad610e2f2e30623dbd51206c01de48c2.bindPopup(popup_ab07f2bb8f5f68ec49b95c5900cb6f39)
+        ;
+
+        
+    
+    
+            var circle_marker_4a388f780ccc70f4ba3630496d2677f8 = L.circleMarker(
+                [43.6624426, -79.4241437],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_9b103586d1b87e408ccc30940a7706f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_813d018936105c456cb27736a0545dcd = $(`<div id="html_813d018936105c456cb27736a0545dcd" style="width: 100.0%; height: 100.0%;"><b>CONC Men's Shelter Bloor St W</b><br>Type: Men only<br>Address: 850 Bloor St W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_9b103586d1b87e408ccc30940a7706f5.setContent(html_813d018936105c456cb27736a0545dcd);
+            
+        
+
+        circle_marker_4a388f780ccc70f4ba3630496d2677f8.bindPopup(popup_9b103586d1b87e408ccc30940a7706f5)
+        ;
+
+        
+    
+    
+            var circle_marker_ef6be5d9938c05eb1e746f65fc22c6d3 = L.circleMarker(
+                [43.7617202, -79.3618157],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_a534011c30a9247b8ad71a7ae5f8bf73 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f6a37df45ae07d56921cc449a293ee2e = $(`<div id="html_f6a37df45ae07d56921cc449a293ee2e" style="width: 100.0%; height: 100.0%;"><b>SA New Hope Leslieville</b><br>Type: Men only<br>Address: 29A Leslie St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_a534011c30a9247b8ad71a7ae5f8bf73.setContent(html_f6a37df45ae07d56921cc449a293ee2e);
+            
+        
+
+        circle_marker_ef6be5d9938c05eb1e746f65fc22c6d3.bindPopup(popup_a534011c30a9247b8ad71a7ae5f8bf73)
+        ;
+
+        
+    
+    
+            var circle_marker_459ba8f66fa68973961ff883d6deaa21 = L.circleMarker(
+                [43.739153, -79.5656502],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_e3ae857598503bbf14b25d671894299c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_041abb824f801caa8180d36c850bdfc8 = $(`<div id="html_041abb824f801caa8180d36c850bdfc8" style="width: 100.0%; height: 100.0%;"><b>SA Islington Seniors' Shelter</b><br>Type: Men only<br>Address: 2671 Islington Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_e3ae857598503bbf14b25d671894299c.setContent(html_041abb824f801caa8180d36c850bdfc8);
+            
+        
+
+        circle_marker_459ba8f66fa68973961ff883d6deaa21.bindPopup(popup_e3ae857598503bbf14b25d671894299c)
+        ;
+
+        
+    
+    
+            var circle_marker_3cf6a89c302d517a37ada56a5befa9a4 = L.circleMarker(
+                [43.739153, -79.5656502],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_746bdfea2abd96cc76e8c7cde1adf4a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62e1e03e033630a22b83ed5298f1f6af = $(`<div id="html_62e1e03e033630a22b83ed5298f1f6af" style="width: 100.0%; height: 100.0%;"><b>SA Islington Seniors' Shelter</b><br>Type: Women only<br>Address: 2671 Islington Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_746bdfea2abd96cc76e8c7cde1adf4a4.setContent(html_62e1e03e033630a22b83ed5298f1f6af);
+            
+        
+
+        circle_marker_3cf6a89c302d517a37ada56a5befa9a4.bindPopup(popup_746bdfea2abd96cc76e8c7cde1adf4a4)
+        ;
+
+        
+    
+    
+            var circle_marker_f0b0adc5cab3bc4a9c20e13c94699747 = L.circleMarker(
+                [43.6754101, -79.4013325],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_a5ba6be8d9ffa3fa148d9adbb3a650ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70c2de42276dd3a8040060eaa7f5263d = $(`<div id="html_70c2de42276dd3a8040060eaa7f5263d" style="width: 100.0%; height: 100.0%;"><b>YWCA Davenport Shelter</b><br>Type: Women only<br>Address: 348 Davenport Road<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_a5ba6be8d9ffa3fa148d9adbb3a650ef.setContent(html_70c2de42276dd3a8040060eaa7f5263d);
+            
+        
+
+        circle_marker_f0b0adc5cab3bc4a9c20e13c94699747.bindPopup(popup_a5ba6be8d9ffa3fa148d9adbb3a650ef)
+        ;
+
+        
+    
+    
+            var circle_marker_bb5b9fc9c716986e2cdcbc404563f179 = L.circleMarker(
+                [43.636441, -79.3987561],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_bb00e0933d74b313e67324d7b497645a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a0fc194eb593edb0f68901e5c457b24f = $(`<div id="html_a0fc194eb593edb0f68901e5c457b24f" style="width: 100.0%; height: 100.0%;"><b>HFS 545 Lake Shore Blvd W Shelter</b><br>Type: Women only<br>Address: 545 Lake Shore Blvd W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_bb00e0933d74b313e67324d7b497645a.setContent(html_a0fc194eb593edb0f68901e5c457b24f);
+            
+        
+
+        circle_marker_bb5b9fc9c716986e2cdcbc404563f179.bindPopup(popup_bb00e0933d74b313e67324d7b497645a)
+        ;
+
+        
+    
+    
+            var circle_marker_466b94fa3d9acc884f50301146ca5c8a = L.circleMarker(
+                [43.636441, -79.3987561],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_5c5643e84ef24089d6c981ae161bfad0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d054adf73a12105bb62e8959b7e3a95a = $(`<div id="html_d054adf73a12105bb62e8959b7e3a95a" style="width: 100.0%; height: 100.0%;"><b>HFS 545 Lake Shore Blvd W Shelter</b><br>Type: Men only<br>Address: 545 Lake Shore Blvd W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_5c5643e84ef24089d6c981ae161bfad0.setContent(html_d054adf73a12105bb62e8959b7e3a95a);
+            
+        
+
+        circle_marker_466b94fa3d9acc884f50301146ca5c8a.bindPopup(popup_5c5643e84ef24089d6c981ae161bfad0)
+        ;
+
+        
+    
+    
+            var circle_marker_0a83b8b21c80267432d602f8e20a1ebb = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_a23f1512f2d10c5b9a3e3c963bc9c1e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5a48c109fd9e88ce616bb681091123fd = $(`<div id="html_5a48c109fd9e88ce616bb681091123fd" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_a23f1512f2d10c5b9a3e3c963bc9c1e6.setContent(html_5a48c109fd9e88ce616bb681091123fd);
+            
+        
+
+        circle_marker_0a83b8b21c80267432d602f8e20a1ebb.bindPopup(popup_a23f1512f2d10c5b9a3e3c963bc9c1e6)
+        ;
+
+        
+    
+    
+            var circle_marker_406e5a9ae1fbdbeaa239f4c0f1134fd3 = L.circleMarker(
+                [43.636441, -79.3987561],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_dae2de120ead9232554fcc27f8dc11fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2cd3867c3b4b8b8351c590b549ad6ea6 = $(`<div id="html_2cd3867c3b4b8b8351c590b549ad6ea6" style="width: 100.0%; height: 100.0%;"><b>HFS 545 Lake Shore Blvd W Shelter</b><br>Type: Men only<br>Address: 545 Lake Shore Blvd W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_dae2de120ead9232554fcc27f8dc11fa.setContent(html_2cd3867c3b4b8b8351c590b549ad6ea6);
+            
+        
+
+        circle_marker_406e5a9ae1fbdbeaa239f4c0f1134fd3.bindPopup(popup_dae2de120ead9232554fcc27f8dc11fa)
+        ;
+
+        
+    
+    
+            var circle_marker_e8eccd2496526653ec8482d07041342c = L.circleMarker(
+                [43.6680901, -79.4829598],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_0355a8a414a31a9f835db73899f65565 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_66eedd2221df92c54a6f646a001ee284 = $(`<div id="html_66eedd2221df92c54a6f646a001ee284" style="width: 100.0%; height: 100.0%;"><b>TSSS Junction Place</b><br>Type: Men only<br>Address: 731 Runnymede Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_0355a8a414a31a9f835db73899f65565.setContent(html_66eedd2221df92c54a6f646a001ee284);
+            
+        
+
+        circle_marker_e8eccd2496526653ec8482d07041342c.bindPopup(popup_0355a8a414a31a9f835db73899f65565)
+        ;
+
+        
+    
+    
+            var circle_marker_bd3d730e0314f8e7716b1c81029c5172 = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_d06bc0119f17a372c4f01e853e2b9f05 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f78bc36311c9fc69055680742de6e37 = $(`<div id="html_4f78bc36311c9fc69055680742de6e37" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_d06bc0119f17a372c4f01e853e2b9f05.setContent(html_4f78bc36311c9fc69055680742de6e37);
+            
+        
+
+        circle_marker_bd3d730e0314f8e7716b1c81029c5172.bindPopup(popup_d06bc0119f17a372c4f01e853e2b9f05)
+        ;
+
+        
+    
+    
+            var circle_marker_88b39c02faaa835075b4cbc806a3125c = L.circleMarker(
+                [43.660337, -79.375719],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_5bfcb923593c6edea3423c1ebca76808 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_75500e69a839e6b2add40966f8ec5a1d = $(`<div id="html_75500e69a839e6b2add40966f8ec5a1d" style="width: 100.0%; height: 100.0%;"><b>Good Shepherd Centre West End Hotel Program</b><br>Type: Men only<br>Address: 335 Jarvis St<br>Capacity type: Room Based Capacity</div>`)[0];
+                popup_5bfcb923593c6edea3423c1ebca76808.setContent(html_75500e69a839e6b2add40966f8ec5a1d);
+            
+        
+
+        circle_marker_88b39c02faaa835075b4cbc806a3125c.bindPopup(popup_5bfcb923593c6edea3423c1ebca76808)
+        ;
+
+        
+    
+    
+            var circle_marker_66b9e2e322d75ada6902af556a91edd0 = L.circleMarker(
+                [43.6390188, -79.4465143],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_2369538a091489a2fbbd98e49a8a14d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6c2cb18d2d8554b651d0add26a3994c5 = $(`<div id="html_6c2cb18d2d8554b651d0add26a3994c5" style="width: 100.0%; height: 100.0%;"><b>CONC West End Hotel Program</b><br>Type: Men only<br>Address: 14 Roncesvalles Ave<br>Capacity type: Room Based Capacity</div>`)[0];
+                popup_2369538a091489a2fbbd98e49a8a14d7.setContent(html_6c2cb18d2d8554b651d0add26a3994c5);
+            
+        
+
+        circle_marker_66b9e2e322d75ada6902af556a91edd0.bindPopup(popup_2369538a091489a2fbbd98e49a8a14d7)
+        ;
+
+        
+    
+    
+            var circle_marker_3fe995847b6ab6ecf5c6e499c224bdf3 = L.circleMarker(
+                [43.6508035, -79.3749075],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_f4660c4b02fc000a1ec3b12971a01843 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3578432a72cad3d694be9066c6ee9295 = $(`<div id="html_3578432a72cad3d694be9066c6ee9295" style="width: 100.0%; height: 100.0%;"><b>TSSS Downtown Response Program</b><br>Type: Men only<br>Address: 76 Church St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_f4660c4b02fc000a1ec3b12971a01843.setContent(html_3578432a72cad3d694be9066c6ee9295);
+            
+        
+
+        circle_marker_3fe995847b6ab6ecf5c6e499c224bdf3.bindPopup(popup_f4660c4b02fc000a1ec3b12971a01843)
+        ;
+
+        
+    
+    
+            var circle_marker_4e198365c04df70c04caad92278ac6b6 = L.circleMarker(
+                [43.6595672, -79.3810055],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_3a712e513e6e502f1f0d4af74ce25910 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82a753d5184da34b562876c86ca0cfc7 = $(`<div id="html_82a753d5184da34b562876c86ca0cfc7" style="width: 100.0%; height: 100.0%;"><b>Street Haven Downtown Hotel Program</b><br>Type: Women only<br>Address: 26 Gerrard St E<br>Capacity type: Room Based Capacity</div>`)[0];
+                popup_3a712e513e6e502f1f0d4af74ce25910.setContent(html_82a753d5184da34b562876c86ca0cfc7);
+            
+        
+
+        circle_marker_4e198365c04df70c04caad92278ac6b6.bindPopup(popup_3a712e513e6e502f1f0d4af74ce25910)
+        ;
+
+        
+    
+    
+            var circle_marker_4c8e76b29a48af2e2dc1a61bf2f5e1ce = L.circleMarker(
+                [43.6697144, -79.3759409],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_fe4854e9f9ba7f21cf3d6dfe0b301881 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7525b6ed879566ecca3c2713e7f4118 = $(`<div id="html_e7525b6ed879566ecca3c2713e7f4118" style="width: 100.0%; height: 100.0%;"><b>St. Simon's Clubbe House</b><br>Type: Men only<br>Address: 556 Sherbourne St<br>Capacity type: Room Based Capacity</div>`)[0];
+                popup_fe4854e9f9ba7f21cf3d6dfe0b301881.setContent(html_e7525b6ed879566ecca3c2713e7f4118);
+            
+        
+
+        circle_marker_4c8e76b29a48af2e2dc1a61bf2f5e1ce.bindPopup(popup_fe4854e9f9ba7f21cf3d6dfe0b301881)
+        ;
+
+        
+    
+    
+            var circle_marker_b8d17e52b8926b6f19fd6d4a539cf09f = L.circleMarker(
+                [43.6614308, -79.4288255],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_0be76fc8b04c74abd9a0f594b7c6e655 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a06bac5fc6d954f3a42ba69c27a94c5b = $(`<div id="html_a06bac5fc6d954f3a42ba69c27a94c5b" style="width: 100.0%; height: 100.0%;"><b>Sistering</b><br>Type: Women only<br>Address: 962 Bloor St W<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_0be76fc8b04c74abd9a0f594b7c6e655.setContent(html_a06bac5fc6d954f3a42ba69c27a94c5b);
+            
+        
+
+        circle_marker_b8d17e52b8926b6f19fd6d4a539cf09f.bindPopup(popup_0be76fc8b04c74abd9a0f594b7c6e655)
+        ;
+
+        
+    
+    
+            var circle_marker_0ebf52a7c13852e91a7e5a6623cc35eb = L.circleMarker(
+                [43.6510367, -79.3751525],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_4d6c938a62cf725652de2820c8e901a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6f21552e915ab46fee2d49ae22f90372 = $(`<div id="html_6f21552e915ab46fee2d49ae22f90372" style="width: 100.0%; height: 100.0%;"><b>Adelaide Resource Centre for Women</b><br>Type: Women only<br>Address: 67 Adelaide St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_4d6c938a62cf725652de2820c8e901a2.setContent(html_6f21552e915ab46fee2d49ae22f90372);
+            
+        
+
+        circle_marker_0ebf52a7c13852e91a7e5a6623cc35eb.bindPopup(popup_4d6c938a62cf725652de2820c8e901a2)
+        ;
+
+        
+    
+    
+            var circle_marker_af524cf575215887c40a9805523925f3 = L.circleMarker(
+                [43.7783143, -79.2464647],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_7b46084d501efcbc0c0bea6841d1fe01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_158a3f545789da854768338d297fa33e = $(`<div id="html_158a3f545789da854768338d297fa33e" style="width: 100.0%; height: 100.0%;"><b>Progress Avenue Shelter</b><br>Type: Men only<br>Address: 705 Progress Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_7b46084d501efcbc0c0bea6841d1fe01.setContent(html_158a3f545789da854768338d297fa33e);
+            
+        
+
+        circle_marker_af524cf575215887c40a9805523925f3.bindPopup(popup_7b46084d501efcbc0c0bea6841d1fe01)
+        ;
+
+        
+    
+    
+            var circle_marker_14cf816c20125797480ebde941975952 = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_9cddcb6175d9050214216245d411a2fa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e0b01c5a738627c2494529d2e28ebd9 = $(`<div id="html_0e0b01c5a738627c2494529d2e28ebd9" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_9cddcb6175d9050214216245d411a2fa.setContent(html_0e0b01c5a738627c2494529d2e28ebd9);
+            
+        
+
+        circle_marker_14cf816c20125797480ebde941975952.bindPopup(popup_9cddcb6175d9050214216245d411a2fa)
+        ;
+
+        
+    
+    
+            var circle_marker_e917486e6074e829128e28c52f27fb88 = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_fde3aa94b25de21911cbb741e895ef11 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96a127ff702000db5752cdba963bf1c7 = $(`<div id="html_96a127ff702000db5752cdba963bf1c7" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_fde3aa94b25de21911cbb741e895ef11.setContent(html_96a127ff702000db5752cdba963bf1c7);
+            
+        
+
+        circle_marker_e917486e6074e829128e28c52f27fb88.bindPopup(popup_fde3aa94b25de21911cbb741e895ef11)
+        ;
+
+        
+    
+    
+            var circle_marker_9b5360bb83384285e46b7a26c81a8e46 = L.circleMarker(
+                [43.6586664, -79.4007532],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_8df12b9759aa8e6d767d6772fba652c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43f86ba2b8567bf6e625af7807c421ee = $(`<div id="html_43f86ba2b8567bf6e625af7807c421ee" style="width: 100.0%; height: 100.0%;"><b>Scott Mission</b><br>Type: Men only<br>Address: 502 Spadina Ave<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_8df12b9759aa8e6d767d6772fba652c3.setContent(html_43f86ba2b8567bf6e625af7807c421ee);
+            
+        
+
+        circle_marker_9b5360bb83384285e46b7a26c81a8e46.bindPopup(popup_8df12b9759aa8e6d767d6772fba652c3)
+        ;
+
+        
+    
+    
+            var circle_marker_e61a94e061c9705a456527362034db0d = L.circleMarker(
+                [43.656175, -79.3624789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_1d43c342c3ba334ba7cc7463839e6f79 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5f660f2848a6877d1947d01f2df6ecb = $(`<div id="html_a5f660f2848a6877d1947d01f2df6ecb" style="width: 100.0%; height: 100.0%;"><b>Good Shepherd Centre</b><br>Type: Men only<br>Address: 412 Queen St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_1d43c342c3ba334ba7cc7463839e6f79.setContent(html_a5f660f2848a6877d1947d01f2df6ecb);
+            
+        
+
+        circle_marker_e61a94e061c9705a456527362034db0d.bindPopup(popup_1d43c342c3ba334ba7cc7463839e6f79)
+        ;
+
+        
+    
+    
+            var circle_marker_a23408469790d1963898a03f668f4a57 = L.circleMarker(
+                [43.6814254, -79.4183507],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_3c5c0409871649031ab3272393351b02 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2415fc911c50214fa810aa6dc470756f = $(`<div id="html_2415fc911c50214fa810aa6dc470756f" style="width: 100.0%; height: 100.0%;"><b>Na-Me-Res</b><br>Type: Men only<br>Address: 14 Vaughan Rd<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_3c5c0409871649031ab3272393351b02.setContent(html_2415fc911c50214fa810aa6dc470756f);
+            
+        
+
+        circle_marker_a23408469790d1963898a03f668f4a57.bindPopup(popup_3c5c0409871649031ab3272393351b02)
+        ;
+
+        
+    
+    
+            var circle_marker_d40fd1f1923dc99edd85962e766a1d67 = L.circleMarker(
+                [43.660052, -79.374465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_f138f96925ef08fb9af43a407fe68eb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90c5c2bd6918a8c78bf990d411f4c29f = $(`<div id="html_90c5c2bd6918a8c78bf990d411f4c29f" style="width: 100.0%; height: 100.0%;"><b>Dixon Hall Schoolhouse</b><br>Type: Men only<br>Address: 349 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_f138f96925ef08fb9af43a407fe68eb4.setContent(html_90c5c2bd6918a8c78bf990d411f4c29f);
+            
+        
+
+        circle_marker_d40fd1f1923dc99edd85962e766a1d67.bindPopup(popup_f138f96925ef08fb9af43a407fe68eb4)
+        ;
+
+        
+    
+    
+            var circle_marker_0c84eaccf150391756776024c73b1346 = L.circleMarker(
+                [43.6179513, -79.4973594],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_afcea848a20a5b62fab96c7bf062d407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eae0697688d6151c0e9f1bc9e04435ec = $(`<div id="html_eae0697688d6151c0e9f1bc9e04435ec" style="width: 100.0%; height: 100.0%;"><b>SVDP Elisa House</b><br>Type: Women only<br>Address: 60 Newcastle St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_afcea848a20a5b62fab96c7bf062d407.setContent(html_eae0697688d6151c0e9f1bc9e04435ec);
+            
+        
+
+        circle_marker_0c84eaccf150391756776024c73b1346.bindPopup(popup_afcea848a20a5b62fab96c7bf062d407)
+        ;
+
+        
+    
+    
+            var circle_marker_ffc7e622fa9b32d2f9ab37efef463352 = L.circleMarker(
+                [43.6600957, -79.3783524],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_7c8c90dc1daf285e31651c2c79fd4760 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_04159dc88556d01d4f7f0f35c9007f27 = $(`<div id="html_04159dc88556d01d4f7f0f35c9007f27" style="width: 100.0%; height: 100.0%;"><b>SVDP Mary's Home</b><br>Type: Women only<br>Address: 70 Gerrard St E<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_7c8c90dc1daf285e31651c2c79fd4760.setContent(html_04159dc88556d01d4f7f0f35c9007f27);
+            
+        
+
+        circle_marker_ffc7e622fa9b32d2f9ab37efef463352.bindPopup(popup_7c8c90dc1daf285e31651c2c79fd4760)
+        ;
+
+        
+    
+    
+            var circle_marker_87c8a971790b1a46048d1413c2523d51 = L.circleMarker(
+                [43.6597005, -79.3743234],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_780fb616956bdabd3631898ff72013e8);
+        
+    
+        var popup_40d4c0a562fc8463a3fc6bc6999eacae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_154ea798e038605a0a8986c88e280699 = $(`<div id="html_154ea798e038605a0a8986c88e280699" style="width: 100.0%; height: 100.0%;"><b>TSSS Seaton House</b><br>Type: Men only<br>Address: 339 George St<br>Capacity type: Bed Based Capacity</div>`)[0];
+                popup_40d4c0a562fc8463a3fc6bc6999eacae.setContent(html_154ea798e038605a0a8986c88e280699);
+            
+        
+
+        circle_marker_87c8a971790b1a46048d1413c2523d51.bindPopup(popup_40d4c0a562fc8463a3fc6bc6999eacae)
+        ;
+
+        
+    
+</script>
+</html>
